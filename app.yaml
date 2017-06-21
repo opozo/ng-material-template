@@ -1,0 +1,35 @@
+application: ng-material-template
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+libraries:
+- name: django
+  version: "1.3"
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /lib
+  static_dir: frontend/lib
+
+- url: /js
+  static_dir: frontend/js
+
+- url: /src # Source code for source map
+  static_dir: frontend/js/src
+
+- url: /lib # Source code for source map
+  static_dir: frontend/js/lib
+
+- url: /css
+  static_dir: frontend/css
+
+- url: /img
+  static_dir: frontend/img
+
+- url: .*
+  script: main.app
